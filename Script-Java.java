@@ -415,7 +415,25 @@ public class App {
                 private float totalComissao;
 
                 public vendedor(){
+                    super();
+                }
 
+
+                public int getTotalVendas(){
+                    return totalVendas;
+                }
+
+                public void setTotalVendas(){
+                    this.totalVendas = totalVendas;
+                }
+
+
+                public float getTotalComissao(){
+                    return totalComissao;
+                }
+
+                public void setTotalComissao(){
+                    this.totalComissao = totalComissao;
                 }
 
             }
