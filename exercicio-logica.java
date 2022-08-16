@@ -1,6 +1,6 @@
 package excercicio-logica;
 
-import java.util.Scanner; //Import responsavel pela captura dedados do usuario
+import java.util.Scanner; //Import responsavel pela captura de dados do usuario
 
 public class App {
    
