@@ -102,5 +102,190 @@ public class App {
     	System.out.println("A media do preço de venda é: " + (totalVenda / i));
 
 
+
+
+
+    	/*A concessionaria de veiculos "CARANGO VELHO" está vedendo seus veiculos com desconto. faça um algoritmo que 
+    	calcule e exiba o valor do desconto e o valor a ser pago pelo cliente de vários carros. O desconto devera de ser calculado
+    	de acordo com o ano do veiculo até 2000 -12% e cima de 2000 -7%. O sistema deverá perguntar se deseja continuar calculando
+    	desconto até que a reesposta seja (N)não. Informar total de carros com ano até 2000 e total geral*/
+
+
+    	int anoFabricado = 0;
+    	float valorVeiculo = 0;
+
+    	float porcentagemDesc = 0.0f;
+    	float valorDesc = 0.0f;
+    	float valorPagar = 0.0f;
+
+    	char desejaContinuar = 'S';
+
+    	int totalCarros = 0;
+    	int totalCarrosSemiNovos = 0;
+
+
+    	while(desejaContinuar == 'S' || desejaContinuar == 's'){
+
+    		System.out.println("Por favor digite o ano do Veiculo");
+    		anoFabricado = leitorScanner.nextInt();
+    		System.out.println("Por Gentileza digite o valor do automovel");
+    		valorVeiculo = leitorScanner.nextFloat();
+
+    		if(anoFabricado < 2000){
+    			porcentagemDesc = 0.12f;
+    		}else if(anoFabricado >= 2000){
+    			porcentagemDesc = 0.07f;
+    			totalCarrosSemiNovos++;
+    		}
+
+    		valorDesc = valorVeiculo * porcentagemDesc;
+    		valorPagar = valorVeiculo - valorDesc;
+
+    		totalCarros++;
+
+    		System.out.println("O valor do carro é: " + valorVeiculo);
+    		System.out.println("O valor do Desconto é: " + valorDesc);
+    		System.out.println("O valor Final é: " + valorPagar);
+
+    		System.out.println("Desaja continuar S-Sim / N-Não");
+    		desejaContinuar = leitorScanner.next().charAt(0);
+
+    		if(desejaContinuar == 'N' || desejaContinuar == 'n'){
+    			System.out.println("O total de carros Semi novos são: " + totalCarrosSemiNovos);
+    			System.out.println("O total de carros é: " + totalCarros);
+    		}
+
+    	}
+
+
+
+
+    	/*Crie uma classe chamada invoice que possa ser utilizadopor uma loja de suprimentos de informática
+    	para representar uma fatura de um item vendido na loja. Uma fatura deve incluir as seguintes informações
+    	como atributos:
+    	a. o número de itens faturados
+    	b. a descrição do item
+    	c. a quantidade comprada do item
+    	d. o preço unitario do item
+    	Sua classe deve ter um construtor que inicialize os quatros atributos se a quantidade não for positiva, ela deve ser 
+    	configurada como 0, se o preço do iten não for positivo ele deve ser configurado com 0.0 Forneça um método set
+    	e um get para cada variável  de instância.
+    	Além disso, forneça um método chamado getlnvoiceAmount que calcule o valor da fatura (isso é multiplica 
+    	a quantidade pelo preço do item) e depois retorna um valor como um double . Escreva um aplicativo de teste
+    	que demonstra as capacidades da classe Invoice*/
+
+
+
+    	//Criando classe Invoice
+
+    	public class invoice{
+
+    		public int codigoProduto;
+    		public String descricaoProduto;
+    		public int qtdComprada;
+    		public float precoProduto;
+
+
+    		public invoice(int codigoProduto,  String descricaoProduto, int quantidadeComprada, float precoProduto){
+
+    			this.setCodigoProduto(codigoProduto);
+    			this.setDescricaoProduto(descricaoProduto);
+
+    			this.setQtdComprada(qtdComprada);
+    			this.setPrecoProduto(precoProduto);
+    			
+    		}
+
+
+    		public double getlnvoiceAmount(){
+    			return qtdComprada * precoProduto;
+    		}
+
+
+    		public getCodigoProduto(){
+    			return codigoProduto;
+    		}
+
+    		public setCodigoProduto(int codigoProduto){
+    			this.codigoProduto = codigoProduto;
+    		}
+
+    		public getDescricaoProduto(){
+    			return descricaoProduto;
+    		}
+
+    		public setDescricaoProduto(String descricaoProduto){
+    			this.descricaoProduto = descricaoProduto;
+    		}
+
+    		public getQtdComprada(){
+    			return qtdComprada;
+    		}
+
+    		public setQtdComprada(int qtdComprada){
+
+    			if(quantidadeComprada < 0){
+    				this.quantidadeComprada = 0
+    			}else{
+    				this.qtdComprada = quantidadeComprada;
+    			}
+
+    		}
+
+    		public getPrecoProduto(){
+    			return precoProduto;
+    		}
+
+    		public setPrecoProduto(float precoProduto){
+    			if(precoProduto < 0){
+
+    				this.precoProduto = 0;
+    			}else{
+    				this.precoProduto = precoProduto;
+    			}
+    		}
+
+
+    	}
+
+    		/*Parte MAIN*/
+
+			class Main {
+
+ 			 public static void main(String[] args) {
+    
+    			invoice inv = new invoice(1, "pirulito", 10, 10.0f);
+    			System.out.println("O valor total do produto é" + inv.getlnvoiceAmount());
+   		 
+  			 
+  			 }
+			
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

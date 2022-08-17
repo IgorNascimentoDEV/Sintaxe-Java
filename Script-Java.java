@@ -415,9 +415,14 @@ public class App {
                 private float totalComissao;
 
                 public vendedor(){
+                    //O método Super é responsavel por chamar os metodos e atributos da classe que está ligada ao vendedor
                     super();
+
                 }
 
+                public float calcularSalario(){
+                    return super.getSalario() + (this.totalComissao * getTotalVendas);
+                }
 
                 public int getTotalVendas(){
                     return totalVendas;
