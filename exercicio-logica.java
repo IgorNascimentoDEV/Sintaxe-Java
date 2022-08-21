@@ -265,6 +265,16 @@ public class App {
 
 
 
+			/*percorrendo um array no java com o uso do for*/
+
+			String familia [] = {"IGOR", "ISABELE", "MARIA ISADORA"};
+
+
+			for(int x = 0; x < familia.length; x++ ){
+				System.out.println("O integrante da familia de igor são na posição " + x + familia[x]);
+			}
+
+
 
 
 
