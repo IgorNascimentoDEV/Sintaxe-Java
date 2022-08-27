@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+    <title>Curso de Jquery</title>
+    <!--Importação do jquery-->
+    <script src="jquery-3.6.1.min.js"></script>
+
+    <!--Script-->
+    <script>
+        //Ao carregar o documento 
+        $(document).ready(function(){
+        //Evento do click    
+        $("button").click(function(){
+            //Adicionar texto no html
+            $("h1").html("Vamos Capgemini!");
+        })
+        });
+
+
+    </script>    
+    </head>
+
+    <body>
+        <h1></h1>
+        <button>Click em mim</button>
+    </body>
+</html>

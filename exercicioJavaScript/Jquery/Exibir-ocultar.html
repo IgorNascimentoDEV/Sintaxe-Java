@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+    <title>Curso de Jquery</title>
+    <!--Importação do jquery-->
+    <script src="jquery-3.6.1.min.js"></script>
+
+    <!--Script-->
+    <script>
+        //Ao carregar o documento 
+        $(document).ready(function(){
+
+            //Exibir imagem
+            $("#exibir").click(function(){
+                $("img").show();
+            });
+
+            //Ocultar imagem
+            $("#ocultar").click(function(){
+                $("img").hide();
+            });
+
+
+            //Fade você pode altera o time nos parâmetros das  funções 
+            //Oculta h1 para iniciar ja oculto
+            $("h1").css("display", "none");
+
+            //Exibir h1
+            $("#exibirh1").click(function(){
+                $("h1").fadeIn();
+            });
+
+            //Oculta h1
+            $("#ocultarh1").click(function(){
+                $("h1").fadeOut();
+            });
+
+            //Alterando o Css no Jquery
+            $("#css").css({
+                "color":"red",
+                "background":"blue"
+            });
+        });
+
+
+    </script>    
+    </head>
+
+    <body>
+        <button id="exibir">click para exibir</button>
+        <button id="ocultar">click para ocultar</button>
+        <br>
+        <img src="exibir-ocultar.webp">
+
+        <hr>
+        <button id="exibirh1">click para exibir</button>
+        <button id="ocultarh1">click para ocultar</button>
+        <h1>Isso é Capgemini</h1>
+
+        <br>
+
+        <h2 id="css">CSS</h2>
+    </body>
+</html>
